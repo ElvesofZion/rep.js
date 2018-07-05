@@ -1,0 +1,19 @@
+{
+  "name": "rep.js",
+  "version": "0.0.1",
+  "description": "NPC reputation library",
+  "main": "rep.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElvesofZion/rep.js.git"
+  },
+  "author": "Shawn Gates",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElvesofZion/rep.js/issues"
+  },
+  "homepage": "https://github.com/ElvesofZion/rep.js#readme"
+}
