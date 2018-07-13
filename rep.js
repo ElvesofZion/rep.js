@@ -3,7 +3,7 @@
 	
 	var Jasmine = require('jasmine');
 	var test = new Jasmine();
-
+	test.loadConfigFile('jasmine.json');
 	const http = require('http');
 
 const hostname = '127.0.0.1';
@@ -21,6 +21,11 @@ server.listen(port, hostname, () => {
 
 describe("rep.js", function() {
 
+	beforeEach(function() {
+    		
+    });
+
+	describe("NPC constructor", function() {
 	// NPC Object constructor
 	function NPC (name, location, likes, dislikes) {
 
@@ -51,13 +56,17 @@ describe("rep.js", function() {
 	function removeLikes() {};
 	function removeDislikes() {};
 	function addEvent(Event) {
-		// it('adds events') {
+
+		this.events.push(Event);
+
+		it('adds events', function () {
 			//add Event object type checker
-		
+
 			//test
-			expect(self.events.includes(Event).toBeTruthy());
-		// }
+			expect(this.events.includes(Event).toBeTruthy());
+		});
 	}
+});
 	// Event Object constructor
 	function Event (name, categories, weight) {
 
@@ -78,4 +87,7 @@ describe("rep.js", function() {
 	var testEvent2 = new Event('Breakfast', ['food', 'fruit'], 5);
 	
 
-})
+	testNPC.addEvent(testEvent);
+
+});
+test.execute();
